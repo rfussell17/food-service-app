@@ -1,0 +1,58 @@
+
+$theme-colors: (
+  "light":#fff
+);
+
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+$nav-text: #fff;
+$body-color: rgb(24, 22, 22);
+$primary: #25ca85;
+$danger: #a5211a;
+$color-primary: rgb(33, 223, 8);
+
+
+
+body{ 
+    background-color: $dark;
+    color:  $body-color;
+}
+
+nav, footer {
+  background-color: $body-color;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.main-btn-span {
+  text-align: center;
+
+  margin: auto;
+  z-index: 3;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 40%;
+}
+
+.main-btn {
+  padding: 1.25% 1.7%;
+  font-size: larger;
+}

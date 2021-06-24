@@ -4,15 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"nodemon index.js\" \"node-sass --watch public/css/main.scss public/css/home.css public/css/foh.scss public/css/foh.scss\"",
+    "compile:sass": "node-sass --watch public/css/main.scss public/css/home.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.0.2",
+    "concurrently": "^6.2.0",
     "ejs": "^3.1.6",
     "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.0"
   }
 }
