@@ -18,8 +18,6 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-console.log(Order.title)
-
 app.get('/', (req, res) => {
     res.render('home')
 });
@@ -28,9 +26,10 @@ app.get('/show', (req, res) => {
     res.render('orders/show')
 });
 
-app.get('/order', (req, res) => {
-    res.render('orders/order', { order })
-});
+// app.get('/order', catchAsync(async (req, res) => {
+//     const order = await Order.find({});
+//     res.render('orders/order', { order })
+// }));
 
 app.get('/login', (req, res) => {
     res.render('users/login')

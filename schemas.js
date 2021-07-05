@@ -1,5 +1,4 @@
 const Joi = require('joi');
-const { number } = require('joi');
 
 module.exports.orderSchema = Joi.object({
     order: Joi.object({

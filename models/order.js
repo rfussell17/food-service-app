@@ -14,10 +14,10 @@ const orderSchema = new Schema({
     type: Number,
     required: true,
   },
-  image: {
-    type: String,
-    required: true,
-  },
+  // image: {
+  //   type: String,
+  //   required: true,
+  // },
   isStarted: {
     type: Boolean,
     required: true,
@@ -29,11 +29,13 @@ const orderSchema = new Schema({
   startTime: {
     type: Number,
     required: true,
-  },
+  }
 //   employee: {
 //     type: Schema.Types.ObjectId, 
 //     ref: 'Employee' 
 //   }
 });
 
-module.exports = mongoose.model("Order", orderSchema)
+const Order = mongoose.model("Order", orderSchema)
+module.exports = Order;
+
