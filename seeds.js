@@ -20,7 +20,7 @@ const seedDB = async () => {
     const time = today.getHours() + ":" + today.getMinutes();
     const order = new Order({
         title: "Pizza",
-        description: "Large vegetable pizza on cauliflower crust - peppers, onions, sundried tomato, soy cheese",
+        description: "Large vegetable pizza on cauliflower crust - peppers, onions, sun dried tomato, soy cheese",
         price,
         image: url('https://unsplash.com/photos/oBbTc1VoT-0'),
         isStarted,
