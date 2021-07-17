@@ -14,10 +14,9 @@ const orderSchema = new Schema({
     type: Number,
     required: true,
   },
-  // image: {
-  //   type: String,
-  //   required: true,
-  // },
+  image: {
+    type: String
+  },
   isStarted: {
     type: Boolean,
     required: true,
