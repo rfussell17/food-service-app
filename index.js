@@ -31,6 +31,11 @@ app.get('/show', (req, res) => {
 //     res.render('orders/order', { order })
 // }));
 
+app.get('/order', async (req, res) => {
+        const order = await Order.find({});
+        res.render('orders/order', { order })
+    });
+
 app.get('/login', (req, res) => {
     res.render('users/login')
 });
