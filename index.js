@@ -5,9 +5,9 @@ const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const Order = require('./models/order');
 
-app.engine('ejs', ejsMate)
+app.engine('ejs', ejsMate);
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'))
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')))
@@ -18,6 +18,14 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
+// mongoose.connect('mongodb://localhost:27017/foodServiceApp', { useNewUrlParser: true})
+//     .then(()=> {
+//         console.log('connection open')
+//     })
+//     .catch(err => {
+//         console.log('error')
+//     })
+
 app.get('/', (req, res) => {
     res.render('home')
 });
@@ -26,15 +34,16 @@ app.get('/show', (req, res) => {
     res.render('orders/show')
 });
 
-// app.get('/order', catchAsync(async (req, res) => {
-//     const order = await Order.find({});
-//     res.render('orders/order', { order })
-// }));
+app.get('/order', catchAsync(async (req, res) => {
+    const order = await Order.find({});
+    res.render('orders/order', { order })
+}));
 
-app.get('/order', async (req, res) => {
-        const order = await Order.find({});
-        res.render('orders/order', { order })
-    });
+// app.get('/order', async (req, res) => {
+//         const order = await Order.find({});
+//         console.log(order)
+//         res.render('orders/order', { order })
+//     });
 
 app.get('/login', (req, res) => {
     res.render('users/login')
