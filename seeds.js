@@ -26,7 +26,7 @@ const seedDB = async () => {
         isStarted,
         cookTime: 600,
         startTime: time,
-        // elapsedTime: null
+        elapsedTime: null
     })
     await order.save();
 }
